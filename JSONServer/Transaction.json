@@ -1,0 +1,32 @@
+{
+  "Bills": [
+    {
+      "id": 1,
+      "Utility_Name": "Electricity",
+      "Month": "April",
+      "Paid": 399,
+      "Paid_Date": "7-5-2023"
+    },
+    {
+      "id": 2,
+      "Utility_Name": "Water",
+      "Month": "April",
+      "Paid": 3,
+      "Paid_Date": "17-5-2023"
+    },
+    {
+      "id": 3,
+      "Utility_Name": "Contents Insurance",
+      "Month": "April",
+      "Paid": 1300,
+      "Paid_Date": "3-5-2023"
+    },
+    {
+      "id": 4,
+      "Utility_Name": "Tv&Broadband",
+      "Month": "April",
+      "Paid": 209,
+      "Paid_Date": "12-5-2023"
+    }
+  ]
+}
