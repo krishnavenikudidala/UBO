@@ -28,5 +28,42 @@
       "Paid": 209,
       "Paid_Date": "12-5-2023"
     }
+  ],
+  "Utility": [
+    {
+      "id": 1,
+      "Utility_Name": "Electricity",
+      "Description": "April",
+      "Due_Date": "17-5-2023",
+      "Time_Period": "20days"
+    },
+    {
+      "id": 2,
+      "Utility_Name": "Water",
+      "Description": "April",
+      "Due_Date": "10-5-2023",
+      "Time_Period": "2days"
+    },
+    {
+      "id": 3,
+      "Utility_Name": "Contents Insurance",
+      "Description": "April",
+      "Due_Date": "11-3-2023",
+      "Time_Period": "10days"
+    },
+    {
+      "id": 4,
+      "Utility_Name": "Tv&Broadband",
+      "Description": "April",
+      "Due_Date": "12-6-2023",
+      "Time_Period": "15days"
+    },
+    {
+      "id": 5,
+      "Utility_Name": "Phone",
+      "Description": "April",
+      "Due_Date": "21-7-2023",
+      "Time_Period": "43days"
+    }
   ]
 }
