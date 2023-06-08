@@ -12,7 +12,7 @@ app.use(function(req, res, next) {
 // const mymod = require('./mymodule')
 
 const { MongoClient } = require('mongodb');
-const uri =  "mongodb+srv://uddeshnarayan2:Uddesh26@cluster0.6xzdmcz.mongodb.net/";
+const uri =  "mongodb+srv://tsthrivishnu:Admin123321@cluster0.czh4i3h.mongodb.net/";
 const client = new MongoClient(uri);
 
 async function myNewUtility(utility) {
