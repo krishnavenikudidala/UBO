@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const url="http://localhost:4000/Bills"
+const url="http://localhost:4000/Utility"
 export async function GetBill() {
   return (
     await axios.get(url)

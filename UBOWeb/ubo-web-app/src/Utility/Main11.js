@@ -1,16 +1,16 @@
 import React, { useEffect, useState } from 'react'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import './Main.css'
-import Table from './Table'
-import {GetBill,DeleteBill,postBill} from './Api';
-import Form from './Form';
+import Table1 from './Table1'
+import {GetBill,DeleteBill,postBill} from './Api1';
+import Form1 from './Form1';
 
 
-export  function Main() {
+export  function Main11() {
   const [Bills,setBills]=useState([])
   const [Closed,setOpened]=useState(false)
   const [initial,setInitial]=useState({
-    Utility_Name:'',Month:'',Paid:'',Paid_Date:''
+    Utility_Name:'',Description:'',Due_Date:'',Time_Period:''
   })
   
      
@@ -45,7 +45,7 @@ export  function Main() {
      <div className='body'>
         <div className='heading'>
           <div className='head'>
-            <h1>Transaction</h1>
+            <h1>Utility</h1>
           </div>
           <div>
             <label>Search:-</label>
@@ -54,10 +54,10 @@ export  function Main() {
           </div>
       </div>
       <div className='table'>
-      <Table list={Bills}  delete={deleteBill} openForm={OpenedForm}/>
+      <Table1 list={Bills}  delete={deleteBill} openForm={OpenedForm}/>
       </div>
       {
-        Closed&&<Form  close={ClosedForm} initialData={initial} postData={addBill}/>
+        Closed&&<Form1  close={ClosedForm} initialData={initial} postData={addBill}/>
       }
       
 

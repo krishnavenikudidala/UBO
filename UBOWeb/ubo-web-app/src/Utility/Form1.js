@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import 'bootstrap/dist/css/bootstrap.min.css'
 
-export default function Form(props) {
+export default function Form1(props) {
 
   const [product,setProduct]=useState(props.initialData)
 
@@ -22,13 +22,13 @@ export default function Form(props) {
         myProduct.Utility_Name = value
         break;
       case 'Month':
-        myProduct.Month = value
+        myProduct.Description = value
         break;
       case 'Paid':
-        myProduct.Paid = value
+        myProduct.Due_Date = value
         break;
       case 'Paid_Date':
-        myProduct.Paid_Date = value
+        myProduct.Time_Period = value
         break;
     
       default:
@@ -53,23 +53,23 @@ export default function Form(props) {
                   onChange={formData} placeholder='Utility-Name'></input>
               </div>
               <div className='one'>
-                  <label>Month</label>
-                  <input type="text" name='Month'
-                  value={product.Month} 
-                  onChange={formData} placeholder='Month'></input>
+                  <label>Description:-</label>
+                  <input type="text" name='Description'
+                  value={product.Description} 
+                  onChange={formData} placeholder='Description'></input>
               </div>
               <div className='one'>
-                  <label>Paid:-</label>
-                  <input type='text' name='Paid' 
-                  value={product.Paid}
-                  onChange={formData} placeholder='Enter-Amount'></input>
+                  <label>Due_Date:-</label>
+                  <input type='text' name='Due_Date' 
+                  value={product.Due_Date}
+                  onChange={formData} placeholder='Enter-Due_Date'></input>
               </div>
               <div className='one'>
-                  <label>Paid_Date</label>
-                  <input type='date' name='Paid_Date'
-                  value={product.Paid_Date} 
+                  <label>Time_Period</label>
+                  <input type='date' name='Time_Period'
+                  value={product.Time_Period} 
                   onChange={formData}
-                   placeholder='Enter Paid Date'></input>
+                   placeholder='Enter-Time_Period'></input>
               </div>
             
               <div>
