@@ -1,13 +1,35 @@
+import { useState } from 'react';
 import './App.css';
-import Main from './Components/Main';
+import MainBody from './Template/MainBody';
+import Header from './Template/Header';
+import Footer from './Template/Footer';
 
-function App() {
-  return (
+
+
+
+export default function App(){
+  const [openBody,setOpenBody]=useState(false)
+
+  const OpenmainBody=()=>{
+    setOpenBody(true)
+  }
+
+  const ClosemainBody=()=>{
+    setOpenBody(false)
+  }
+
+
+   return (
   <>
-  <Main/>
-  </>
+  <Header Open={OpenmainBody} close={ClosemainBody} />
+  { openBody&&< MainBody/>}
+  { openBody&&<Footer/>}
+  
+  
+  
+</>
   )
 }
 
 
-export default App;
+
