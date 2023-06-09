@@ -3,6 +3,9 @@ import {Main} from '../Components/Main';
 import Sidebar from './Sidebar';
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import { Main11 } from '../Utility/Main11';
+import MyUtilities from '../Components/Utility2';
+import Util123 from '../Components/Utility';
+import UpdateUtility from '../Components/UpdateUtility';
 
 
 
@@ -20,8 +23,11 @@ export default function MainBody() {
           </div>
           <div style={{ width: '100%', display: 'flex', justifyContent: 'center', textAlign: 'center', margin: ' 20px auto' }}>
             <Routes>
-              <Route path='/utility' element={<Main11 />} />
+              <Route path='/utility' element={<MyUtilities/>} />
               <Route path='/transaction' element={<Main />} />
+              <Route path='/AddUtility' element={<Util123/>}/>
+              <Route path='/UpdateUtility' element={<UpdateUtility/>}/>
+              
             </Routes> </div> </div>
       </BrowserRouter>
     </>)
