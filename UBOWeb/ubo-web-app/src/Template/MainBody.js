@@ -21,7 +21,7 @@ export default function MainBody() {
           </div>
           <div style={{ width: '100%', display: 'flex', justifyContent: 'center', textAlign: 'center', margin: ' 20px auto' }}>
             <Routes>
-              <Route path='SignUp' element={<SignUp/>}/>
+              <Route path='/SignUp' element={<SignUp/>}/>
               <Route path='/utility' element={<MyUtilities/>} />
               <Route path='/transaction' element={<Main />} />
               <Route path='/AddUtility' element={<Util123/>}/>

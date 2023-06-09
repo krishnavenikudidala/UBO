@@ -11,6 +11,8 @@ export default function Sidebar() {
         <Link to='/utility' >Utility</Link>
         <br></br>
         <Link to='/transaction'>Transaction</Link>
+        <br></br>
+        <Link to='/SignUp'>Sign Up</Link>
      </ul>  
     </div>
     </>
