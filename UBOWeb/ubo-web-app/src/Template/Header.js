@@ -11,6 +11,10 @@ export default function Header(props) {
       <button className='btn btn-primary' 
        style={{width:'80px',height:'40px',margin:'auto 10px'}}
        onClick={()=>{props.Open()}}>sign-in</button>
+<button className='btn btn-primary' 
+       style={{width:'80px',height:'40px',margin:'auto 10px'}}
+       onClick={()=>{props.Open()}}>SignUp</button>
+
 
 <button className='btn btn-secondary' 
        style={{width:'100px',height:'40px',margin:'auto 80px auto 20px'}}
