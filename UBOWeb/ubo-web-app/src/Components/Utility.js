@@ -1,32 +1,36 @@
 import React from "react";
-import { useState } from "react";
+import { useEffect,useState } from "react";
 import axios from "axios";
 import './Utility.css'
+import { useLocation } from "react-router-dom";
 
 
 
 
 function Util123() {
+    const location = useLocation()
+    const [addStatus,setaddstatus] =useState(false)
     const [name, setName] = useState("")
-    const [description, setDescription] = useState("")
     const [date, setExpectedPayDate] = useState("")
-    const[month,setExpectedPayMonth] = useState("")
     const [amount, setExpectedPayAmount] = useState("")
     const [frequency, setTimePeriod] = useState(0)
+
+    useEffect(() => {
+        if (addStatus){
+            window.location.reload()
+        }
+    },[addStatus]);
+   
 
 
     function doNameChange(event) {
         setName(event.target.value)
     }
-    function dodescriptionChange(event) {
-        setDescription(event.target.value)
-      }
+   
     function dodateChange(event) {
         setExpectedPayDate(event.target.value)
     }
-    function domonthChange(event) {
-        setExpectedPayMonth(event.target.value)
-    }
+
   
     function doamountChange(event) {
         setExpectedPayAmount(event.target.value)
@@ -38,41 +42,47 @@ function Util123() {
     function saveutility(){
         let json = {}
         json["Name"] = name
-        json["description"] = description
+       
         json["date"] = date
-        json["month"]= month
+      
         json["amount"] = amount
         json["frequency"] = frequency
 
         axios.post('http://localhost:5000/newutility', json)
-        .then(
-            alert("successful")
-        ).catch(err => alert(err))
+        .then(() =>{
+            (() => {
+                alert("successfuly updated");
+            })();
+                setaddstatus(true);
+               
+            })
+            .catch(error => {
+                console.error(error);
+              });
   
     }
     return (
 
         <>
+        {/* <h1>Hello</h1> */}
             
             <form>
               
                 <div className="formbody">
                      <h1 style={{ marginBottom: 15}}> New Utility</h1>
+                     <br></br>
                     <div className="Box">
-                     Name  <input type="Text" placeholder="UtiltiyName" onChange={doNameChange}></input><br></br>
+                      Name  <input type="Text" placeholder="UtiltiyName" onChange={doNameChange}></input><br></br>
                     </div>
+                    
                     <div className="Box">
-                        Description   <input  type="text"onChange={dodescriptionChange}></input><br></br>
+                     PayDate <input type="date" onChange={dodateChange}></input>
                     </div>
+                   
                     <div className="Box">
-                        ExpectedPayDate <input type="date" onChange={dodateChange}></input>
+                        PayAmount <input type="Text" onChange={doamountChange}></input>
                     </div>
-                    <div className="Box">
-                        ExpectedPayMonth <input type="text" onChange={domonthChange}></input>
-                    </div>
-                    <div className="Box">
-                        ExpectedPayAmount <input type="Text" onChange={doamountChange}></input>
-                    </div>
+                   
                     <div className="Box">
                         Freuqency  <select onChange={dotimeChange} >
                         <option>Select Time Period</option>
@@ -82,10 +92,10 @@ function Util123() {
                     </select>
                   
                     </div>
-                    <br></br>
+                   
                     <div>
-                        <input style={{backgroundColor:"red", color: "white" ,fontSize: "15px", padding: "10px 20px"}} type="reset" value="reset"></input> 
-                        <input style={{backgroundColor:"green", color: "white",fontSize: "15px", padding: "10px 20px"}} type="button" value="save" onClick={saveutility}></input>
+                        <input  className='btn btn-danger'  type="reset" value="reset"></input> 
+                        <input className='btn btn-secondary m-1' type="button" value="save" onClick={saveutility}></input>
                     </div>
 
 
